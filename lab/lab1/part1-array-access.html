@@ -74,10 +74,23 @@
     Start code
 
     ===================== */
+    let restaurantData = [['lat','lng','label'],
+    [39.955266,-75.212274,'LULU Cafe'],
+    [39.953178,-75.210304,'Tampopo'],
+    [39.959317,-75.194585,'Chengdu']]
 
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    restaurantData.push([39.949821,-75.209103,'Green Line Cafe'],
+    [39.949766,-75.209373,'Clarkville'])
+
+
+    let newMarker = (map)=>{
+      for (let i=1;i<restaurantData.length;i++){
+      L.marker([restaurantData[i][0],restaurantData[i][1]]).addTo(map).bindPopup(restaurantData[i][2])
+      }
+    }
+    newMarker(map)
+
+
 
     /* =====================
 
