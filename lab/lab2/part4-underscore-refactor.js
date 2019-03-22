@@ -56,10 +56,25 @@
     }
   }
 
+
+var isOpenf = function(school){
+  return school.ACTIVE.toUpperCase() == 'OPEN';
+}
+
+var isPublicF = function(school){
+  return school.TYPE.toUpperCase()!='CHARTER'
+  return school.TYPE.toUpperCase()!='PRIVATE'
+}
+
+
+var keeperf = function(school){
+  return isOpenF(school) && isPublifF(school)
+}
   // filter data
   var filtered_data = [];
   var filtered_out = [];
   for (var i = 0; i < schools.length - 1; i++) {
+      console.log('This is public',isPublicF(schools[i]))
     isOpen = schools[i].ACTIVE.toUpperCase() == 'OPEN';
     isPublic = (schools[i].TYPE.toUpperCase() !== 'CHARTER' ||
                 schools[i].TYPE.toUpperCase() !== 'PRIVATE');

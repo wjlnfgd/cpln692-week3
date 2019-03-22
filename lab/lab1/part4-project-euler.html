@@ -31,9 +31,32 @@
     Start code
 
     ===================== */
+//Problem 1
+let sum_value = 0
+for (let i = 1;i<1000;i++){
+  if (i % 3 === 0 || i % 5 === 0){
+    sum_value += i
+  }
+  console.log( sum_value)
+}
 
+//Problem 2
+let fibonacci = (n)=>{
+  if (n<3){
+    return n
+  }else{
+    return fibonacci(n-1) + fibonacci(n-2)
+  }
+}
 
+let sumFibonacci = 0
 
+for (let i = 1;fibonacci(i)<4000000;i++){
+  if(fibonacci(i) % 2 === 0){
+  sumFibonacci += fibonacci(i)
+}
+}
+console.log(sumFibonacci)
     /* =====================
 
     End code
